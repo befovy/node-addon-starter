@@ -1,7 +1,7 @@
 // Modules to control application life and create native browser window
 const {app, BrowserWindow} = require('electron')
 const path = require('path')
-
+const url = require('url')
 // Keep a global reference of the window object, if you don't, the window will
 // be closed automatically when the JavaScript object is garbage collected.
 let mainWindow
@@ -17,18 +17,12 @@ function createWindow () {
     }
   })
 
-  // and load the index.html of the app.
-  // mainWindow.loadFile('index.html')
-    /* 
-   * 加载应用-----  electron-quick-start中默认的加载入口
-    mainWindow.loadURL(url.format({
-      pathname: path.join(__dirname, 'index.html'),
-      protocol: 'file:',
-      slashes: true
-    }))
-  */
-  // 加载应用----适用于 react 项目
   mainWindow.loadURL('http://localhost:3000/');
+  // mainWindow.loadURL(url.format({
+  //   pathname: path.join(__dirname, 'build', 'index.html'),
+  //   protocol: 'file:',
+  //   slashes: true
+  // }))
 
 
   const {addon} = require('hello_world')

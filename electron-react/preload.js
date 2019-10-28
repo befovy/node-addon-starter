@@ -13,3 +13,5 @@ window.addEventListener('DOMContentLoaded', () => {
   const {addon} = require('hello_world')
   replaceText(`hello-world`, addon.hello())
 })
+
+global.addon = require('hello_world')
